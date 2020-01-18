@@ -1,0 +1,44 @@
+Cwiczenie 1/2:
+http://localhost:8080/hibernate-demo/student?action=findAll
+http://localhost:8080/hibernate-demo/student?action=update&id=1&name=Pawel%20Karol
+http://localhost:8080/hibernate-demo/student?action=add&name=Agnieszka
+http://localhost:8080/hibernate-demo/student?action=delete&id=3
+
+Cwiczenie 3:
+http://localhost:8080/hibernate-demo/student?action=findAll
+http://localhost:8080/hibernate-demo/student?action=add&name=Wojtek&surname=Kupag&date=1961-01-02
+
+Cwiczenie 4:
+http://localhost:8080/hibernate-demo/computer?action=findAll
+http://localhost:8080/hibernate-demo/computer?action=add&name=SuperKompjuterElonaMuska&os=TESOXXX
+http://localhost:8080/hibernate-demo/computer?action=update&id=1&name=SuperKompjuterElonaMuska&os=Windows Server 2016
+http://localhost:8080/hibernate-demo/computer?action=delete&id=3
+
+Cwiczenie 5:
+http://localhost:8080/hibernate-demo/student?action=add&name=Wojtek&surname=Kupag&date=1961-01-02&cid=1
+http://localhost:8080/hibernate-demo/computer?action=add&name=SuperKompjuterElonaMuska&os=TESOXXX
+http://localhost:8080/hibernate-demo/student?action=add&name=Wojtek&surname=Kupag&date=1961-01-02&cid=3
+
+Cwiczenie 6 (I):
+http://localhost:8080/hibernate-demo/address?action=findAll
+http://localhost:8080/hibernate-demo/address?action=add&street=Kolobrzeska 14&city=Gdansk
+http://localhost:8080/hibernate-demo/address?action=delete&id=1
+
+Cwiczenie 6 (II):
+http://localhost:8080/hibernate-demo/student?action=findAll
+http://localhost:8080/hibernate-demo/address?action=add&street=Kolobrzeska%2014&city=Gdansk
+http://localhost:8080/hibernate-demo/computer?action=add&name=SuperKompjuterElonaMuska&os=TESOXXX
+http://localhost:8080/hibernate-demo/student?action=add&name=Wojtek&surname=Kupag&date=1961-01-02&cid=3&aid=3
+
+Cwiczenie 8:
+http://localhost:8080/hibernate-demo/student?action=findAll
+http://localhost:8080/hibernate-demo/computer?action=add&name=SuperKompjuterElonaMuska&os=TESOXXX
+http://localhost:8080/hibernate-demo/course?action=add&name=JJDD8
+http://localhost:8080/hibernate-demo/student?action=add&name=Wojtek&surname=Kupag&date=1961-01-02&cid=3&aid=1&courseName=JJDD8
+http://localhost:8080/hibernate-demo/student?action=update&id=3&name=Wojtek&surname=Kupag&date=1961-01-02&cid=3&aid=1&courseName=JJFD9
+
+Cwiczenie 9:
+http://localhost:8080/hibernate-demo/student?action=bornAfter&date=1961-01-01
+
+Cwiczenie 10:
+http://localhost:8080/hibernate-demo/student?action=summary
