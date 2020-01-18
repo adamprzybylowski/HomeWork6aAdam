@@ -2,13 +2,7 @@ package com.infoshareacademy.model;
 
 import java.util.List;
 import java.util.stream.Collectors;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @NamedQueries({
     @NamedQuery(
@@ -27,7 +21,18 @@ public class Course {
   @ManyToMany(mappedBy = "courses")
   private List<Student> students;
 
+  @ManyToMany(mappedBy = "courses", fetch = FetchType.LAZY) // here many to many
+  private List<Teacher> teachers;
+
   public Course() {
+  }
+
+  public List<Teacher> getTeachers() {
+    return teachers;
+  }
+
+  public void setTeachers(List<Teacher> teachers) {
+    this.teachers = teachers;
   }
 
   public Course(String name) {

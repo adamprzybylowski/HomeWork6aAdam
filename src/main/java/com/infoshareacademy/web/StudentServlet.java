@@ -148,7 +148,7 @@ public class StudentServlet extends HttpServlet {
       existingStudent.setAddress(address);
 
       String courseName = req.getParameter("courseName");
-      Course course = courseDao.findById(courseName);
+      Course course = courseDao.findByName(courseName);
       existingStudent.getCourses().add(course);
 
       studentDao.update(existingStudent);
@@ -178,7 +178,7 @@ public class StudentServlet extends HttpServlet {
     p.setAddress(address);
 
     String courseName = req.getParameter("courseName");
-    Course course = courseDao.findById(courseName);
+    Course course = courseDao.findByName(courseName);
     p.setCourses(Arrays.asList(course));
 
     studentDao.save(p);
