@@ -3,7 +3,6 @@ package com.infoshareacademy.model;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,6 +71,7 @@ public class Teacher {
     public Teacher() {
 
     }
+
     public Teacher(String name, String surname, String pesel,
                    List<Course> courses) {
         this.pesel = pesel;

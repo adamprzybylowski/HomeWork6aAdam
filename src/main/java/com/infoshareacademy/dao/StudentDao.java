@@ -1,47 +1,48 @@
 package com.infoshareacademy.dao;
 
 import com.infoshareacademy.model.Student;
-import java.time.LocalDate;
-import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import java.time.LocalDate;
+import java.util.List;
 
 @Stateless
 public class StudentDao {
 
-  @PersistenceContext
-  private EntityManager entityManager;
+    @PersistenceContext
+    private EntityManager entityManager;
 
-  public Long save(Student s) {
-    entityManager.persist(s);
-    return s.getId();
-  }
-
-  public Student update(Student s) {
-    return entityManager.merge(s);
-  }
-
-  public void delete(Long id) {
-    final Student s = entityManager.find(Student.class, id);
-    if (s != null) {
-      entityManager.remove(s);
+    public Long save(Student s) {
+        entityManager.persist(s);
+        return s.getId();
     }
-  }
 
-  public Student findById(Long id) {
-    return entityManager.find(Student.class, id);
-  }
+    public Student update(Student s) {
+        return entityManager.merge(s);
+    }
 
-  public List<Student> findAll() {
-    final Query query = entityManager.createQuery("SELECT s FROM Student s");
+    public void delete(Long id) {
+        final Student s = entityManager.find(Student.class, id);
+        if (s != null) {
+            entityManager.remove(s);
+        }
+    }
 
-    return query.getResultList();
-  }
+    public Student findById(Long id) {
+        return entityManager.find(Student.class, id);
+    }
 
-  public List<Student> findBornAfter(LocalDate date) {
-    // Native Query vvvvv dlatego ich nie lubimy :C
+    public List<Student> findAll() {
+        final Query query = entityManager.createQuery("SELECT s FROM Student s");
+
+        return query.getResultList();
+    }
+
+    public List<Student> findBornAfter(LocalDate date) {
+        // Native Query vvvvv dlatego ich nie lubimy :C
 //        Query query = entityManager.createNativeQuery(
 //            "SELECT * FROM STUDENTS WHERE date_of_birth >= :param1 "
 //                + "ORDER BY date_of_birth DESC");
@@ -67,16 +68,16 @@ public class StudentDao {
 //
 //        return students;
 
-    // JPQL
+        // JPQL
 //        Query query = entityManager.createQuery("SELECT s FROM Student s WHERE "
 //            + "s.dateOfBirth >= :param1 ORDER BY s.dateOfBirth DESC");
 //
 //        query.setParameter("param1", date);
 //        return query.getResultList();
 
-    // Named Query
-    Query query = entityManager.createNamedQuery("Student.findBornAfter");
-    query.setParameter("param1", date);
-    return query.getResultList();
-  }
+        // Named Query
+        Query query = entityManager.createNamedQuery("Student.findBornAfter");
+        query.setParameter("param1", date);
+        return query.getResultList();
+    }
 }

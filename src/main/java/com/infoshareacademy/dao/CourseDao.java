@@ -2,12 +2,13 @@ package com.infoshareacademy.dao;
 
 import com.infoshareacademy.model.Course;
 import com.infoshareacademy.model.CourseSummary;
-import java.util.List;
-import java.util.stream.Collectors;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Stateless
 public class CourseDao {

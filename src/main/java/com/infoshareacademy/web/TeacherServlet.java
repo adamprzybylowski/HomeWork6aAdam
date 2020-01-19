@@ -38,7 +38,6 @@ public class TeacherServlet extends HttpServlet {
     private CourseDao courseDao;
 
 
-
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
